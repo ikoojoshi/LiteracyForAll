@@ -1,0 +1,19 @@
+{
+  "name": "literacyforall",
+  "version": "1.0.0",
+  "description": "website by rotaract club of vit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikoojoshi/LiteracyForAll.git"
+  },
+  "author": "Ipshita Joshi, Sarthak Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikoojoshi/LiteracyForAll/issues"
+  },
+  "homepage": "https://github.com/ikoojoshi/LiteracyForAll#readme"
+}
