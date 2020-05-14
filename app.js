@@ -21,6 +21,13 @@ const app = express();
 //Bringe in models
 let Course = require('./models/course');
 
+//body parser
+//app.use(bodyParser.urlencoded({extended: false}));
+//app.use(bodyParser.json());
+
+//set public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 //Load View Engine
 app.set('path', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -52,3 +59,5 @@ app.get('/courses', function(req,res){
 app.listen(3000, function(){
   console.log("server started on port 3000");
 });
+
+// to change to new page - res.redirect('/')

@@ -2,9 +2,50 @@ doctype html
 html
   head
     title Literacy For All
+    link(rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css")
+    style.
+      nav{
+        background: #dec49b;
+      }
+      nav-item{
+        color: "white"; 
+      }
   body
-    block content
+    nav.navbar.navbar-expand-lg.navbar-light.warning-color.lighten-5
+      a.navbar-brand(href='#') Navbar
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Features
+          li.nav-item
+            a.nav-link(href='#') Pricing
+          li.nav-item
+            a.nav-link.disabled(href='#', tabindex='-1', aria-disabled='true') Disabled
+            
     br
+    .jumbotron
+      .container
+        h1 Hello, world!
+        p
+          | This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+        p
+          a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
+
     hr
-    footer
-      p copyright &copy; 2020
+    
+
+
+
+              
+    .container
+      block content
+      br
+      hr
+      footer
+        p copyright &copy; 2020

@@ -2,6 +2,6 @@ extends layout
 
 block content
   h1 #{title}
-  ul
+  ul.list-group
     each course, i in courses
-      li= course.title
+      li.list-group-item= course.title
