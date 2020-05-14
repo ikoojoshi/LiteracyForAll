@@ -1,17 +1,43 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 
+//connect to database
+mongoose.connect("mongodb://localhost/literacyforall", {useNewUrlParser:true, useUnifiedTopology: true});
+let db = mongoose.connection;
+
+//check for db errors
+db.on("error", function(err){
+  console.log(err);
+});
+
+//check connection
+db.once('open', function(){
+  console.log('Connected to MongoDB');
+})
 //Init app
 const app = express();
+
+//Bringe in models
+let Course = require('./models/course');
 
 //Load View Engine
 app.set('path', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
-//Home Route
+//Home Routes
 app.get('/', function(req, res){
-  res.render('index',{
-    title: 'Articles'
+  Course.find({}, function(err, courses){
+    if(err){
+      console.log(err);
+    }
+    else {
+      console.log(courses);
+      //console.log(db);
+      res.render('index',{
+        title: 'Courses',
+        courses : courses
+      });
+    }
   });
 });
 

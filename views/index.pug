@@ -1,6 +1,7 @@
-doctype html
-html
-  head
-    title Literacy For All
-  body
-    p #{title}
+extends layout
+
+block content
+  h1 #{title}
+  ul
+    each course, i in courses
+      li= course.title
