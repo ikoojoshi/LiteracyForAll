@@ -1,7 +1,83 @@
-extends layout
+doctype html
+html
+  head
+    title Literacy For All
+    link(rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css")
+    style.
+      nav{
+        background: #dec49b;
+      }
+      nav-item{
+        color: "white"; 
+      }
+      .jumbotron{
+      	background-image: url('pictures/jumbotron.png');
+      	background-size: cover;
+      	background-repeat: no-repeat;
+        height: 450px;
+        padding-top: 20%;
+        padding-right: 22%;
+      } 
+      .head{
+        font-size: 37px;
+      }
+      .body{
+        font-size: 19px;
+      }
+      .scrolldown{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+      }
+      .scrolldowntext{
+        color: black;
+      }
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.warning-color.lighten-5
+      a.navbar-brand(href='#') Rotaract Club of VIT
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Courses
+          li.nav-item
+            a.nav-link(href='#') About us
+          //li.nav-item
+            a.nav-link.disabled(href='#', tabindex='-1', aria-disabled='true') Disabled
+            
+    .jumbotron
+      .container
+        p.head Literacy For All
+        p.body A lockdown initiative by Rotaract Club of VIT sponsored by Rotary Club of Vellore Presidency to beat the lockdown blues and learn new skills
+        a(href='#')
+          p.scrolldowntext Scroll down to view courses 
+            img.scrolldown(src='pictures/scrolldown.png', alt='')
+        //  a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
 
-block content
-  h1 #{title}
-  ul.list-group
-    each course, i in courses
-      li.list-group-item= course.title
+
+    br
+    .container
+      h1 #{title}
+      br
+      .row
+        each course, i in courses
+          //li.list-group-item= course.title
+          .col-md-4
+            h2= course.title
+            p | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+    
+
+              
+    .container.warning-color.lighten-5
+      br
+      br
+      hr
+      footer
+        p copyright &copy; 2020
+
+  
