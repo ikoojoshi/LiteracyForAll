@@ -2,7 +2,7 @@ doctype html
 html
   head
     title Literacy For All
-    link(rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.css")
     style.
       nav{
         background: #dec49b;
@@ -32,6 +32,9 @@ html
       .scrolldowntext{
         color: black;
       }
+      #courses{
+        margin-top: 90px;
+      }
   body
     nav.navbar.navbar-expand-lg.navbar-light.warning-color.lighten-5
       a.navbar-brand(href='#') Rotaract Club of VIT
@@ -56,11 +59,10 @@ html
           p.head Literacy For All
         p.body A lockdown initiative by Rotaract Club of VIT sponsored by Rotary Club of Vellore Presidency to beat the lockdown blues and learn new skills
         p.body Check out the courses offered below. 
-          img.scrolldown(src='pictures/scrolldown.png', alt='')
-        //a(href='#courses')
-          p.scrolldowntext Scroll down to view courses 
+          a(href="#courses")
             img.scrolldown(src='pictures/scrolldown.png', alt='')
-        //  a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
+        br
+        br
 
     .container
       #courses
@@ -97,6 +99,3 @@ html
             p 
     script(src='/bower/jquery/dist/js/bootstrap.js')
     script(src='/bower/bootstrap/dist/js/bootstrap.js')
-
-
-  

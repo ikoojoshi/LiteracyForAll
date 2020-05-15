@@ -31,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Load View Engine
 app.set('path', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+
 //Home Routes
 app.get('/', function(req, res){
   Course.find({}, function(err, courses){
@@ -38,7 +40,6 @@ app.get('/', function(req, res){
       console.log(err);
     }
     else {
-      console.log(courses);
       res.render('index',{
         courses : courses
       });
@@ -46,12 +47,23 @@ app.get('/', function(req, res){
   });
 });
 
-//English course
-app.get('/courses', function(req,res){
-  res.render('courses',{
-    title: 'English'
+// for various courses
+app.get('/course/:id', function(req,res){
+  Course.findById(req.params.id, function(err,course){
+    // console.log(courses);
+    res.render('course',{
+      course: course
+    });
   });
 });
+
+
+//English course
+// app.get('/course', function(req,res){
+//   res.render('courses',{
+//     title: 'English'
+//   });
+// });
 
 //Start Server
 app.listen(3000, function(){
