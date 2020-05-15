@@ -10,7 +10,7 @@ let db = mongoose.connection;
 db.on("error", function(err){
   console.log(err);
 });
-
+//check
 //check connection
 db.once('open', function(){
   console.log('Connected to MongoDB');
