@@ -1,1 +1,11 @@
 picture source : https://www.google.com/search?q=kids+education+clipart&safe=active&sxsrf=ALeKk01clo2xJ_yfVo6Iypy9KBJJ-aRexw:1589459222681&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiJ_uiCrbPpAhWE9nMBHWX7DyEQ_AUoAXoECA0QAw&biw=1422&bih=678#imgrc=_yNH4GHA1KIMoM
+
+npm install --save express
+npm install --save pug
+npm install -g nodemon
+mongoose
+nodemon
+bower
+
+bower install bootstrap
+bower install jquery
