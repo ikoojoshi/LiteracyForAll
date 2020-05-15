@@ -7,15 +7,15 @@ html
       nav{
         background: #dec49b;
       }
-      nav-item{
-        color: "white"; 
+      a{
+        color: black;
       }
       .jumbotron{
-      	background-image: url('pictures/jumbotron.png');
+      	background-image: url('pictures/jumbotron.jpg');
       	background-size: cover;
       	background-repeat: no-repeat;
         height: 450px;
-        padding-top: 20%;
+        padding-top: 23%;
         padding-right: 22%;
       } 
       .head{
@@ -44,7 +44,7 @@ html
               | Home 
               span.sr-only (current)
           li.nav-item
-            a.nav-link(href='#') Courses
+            a.nav-link(href='#courses') Courses
           li.nav-item
             a.nav-link(href='#') About us
           //li.nav-item
@@ -52,32 +52,51 @@ html
             
     .jumbotron
       .container
-        p.head Literacy For All
+        b
+          p.head Literacy For All
         p.body A lockdown initiative by Rotaract Club of VIT sponsored by Rotary Club of Vellore Presidency to beat the lockdown blues and learn new skills
-        a(href='#')
+        p.body Check out the courses offered below. 
+          img.scrolldown(src='pictures/scrolldown.png', alt='')
+        //a(href='#courses')
           p.scrolldowntext Scroll down to view courses 
             img.scrolldown(src='pictures/scrolldown.png', alt='')
         //  a.btn.btn-primary.btn-lg(href='#', role='button') Learn more »
 
-
-    br
     .container
-      h1 #{title}
+      #courses
+        //h2 Courses
       br
       .row
         each course, i in courses
-          //li.list-group-item= course.title
           .col-md-4
-            h2= course.title
-            p | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-    
-
+            .card(style='width: 18rem;')
+              a(href="/course/"+course._id)
+                img.card-img-top(src= course.path, alt='Card image cap')
+              .card-body
+                a(href="/course/"+course._id)
+                  h4= course.title
+                p= course.description  
               
-    .container.warning-color.lighten-5
-      br
-      br
-      hr
-      footer
-        p copyright &copy; 2020
+    br
+    br
+    hr
+    // Footer
+    footer.page-footer.font-small.indigo
+      // Footer Links
+      .container.text-center.text-md-left
+        .row
+          .col-md-3.mx-auto.text-center
+            p Rotaract Club of VIT | 2020
+          .col-md-2.mx-auto
+          hr.clearfix.w-100.d-md-none
+          .col-md-2.mx-auto
+          hr.clearfix.w-100.d-md-none
+          .col-md-5.mx-auto.text-center
+              p Any queries related to the website, contact abc@gmail.com
+          .footer-copyright.text-center.py-3
+            p 
+    script(src='/bower/jquery/dist/js/bootstrap.js')
+    script(src='/bower/bootstrap/dist/js/bootstrap.js')
+
 
   

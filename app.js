@@ -39,9 +39,7 @@ app.get('/', function(req, res){
     }
     else {
       console.log(courses);
-      //console.log(db);
       res.render('index',{
-        title: 'Courses',
         courses : courses
       });
     }

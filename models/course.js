@@ -6,12 +6,16 @@ let mongoose = require("mongoose");
 let courseSchema = mongoose.Schema({
   title:{
     type: String,
-    required: false
+    required: true
 },
-id:{
-  type: String,
-  required: false
-}
+  path:{
+    type: String,
+    required: true
+},
+  description:{
+    type: String,
+    required: false
+  }
 });
 
 let Course = module.exports = mongoose.model('Course', courseSchema);
