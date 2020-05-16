@@ -61,64 +61,63 @@ app.get('/', function(req, res){
   //     courses: course,
   //   });
   // }
-  const directoryPath = path.join(__dirname, 'public/data');
-  var course= [];
-
-  async function finaltry() {
-  fs.readdir(directoryPath, function getData(err, files) {
-      //handling error
-      if (err) {
-          return console.log('Unable to scan directory: ' + err);
-      }
-      //listing all files using forEach
-      var description;
-      var path2;
-      var title;
-      files.forEach(function (file) {
-          // Do whatever you want to do with the file
-
-          const fileStream = fs.createReadStream('public/data/'+file);
-          const rl = readline.createInterface({
-            input: fileStream,
-            crlfDelay: Infinity
-          });
-          let i = 0
-          title = file.substring(0, file.length - 4);
-          console.log(title);
-
-          async function processLineByLine() {
-            for await (const line of rl) {
-              if(i==0){
-                description = line;
-              }
-              else if(i==1){
-                path2 = line;
-                course.push([{title: title, description: description, path: path2}]);
-              }
-              else
-                break;
-
-              i = i + 1;
-            }
-          }
-          processLineByLine();
-      });
+  // const directoryPath = path.join(__dirname, 'public/data');
+  // var course= [];
+  //
+  // async function finaltry() {
+  // fs.readdir(directoryPath, function getData(err, files) {
+  //     //handling error
+  //     if (err) {
+  //         return console.log('Unable to scan directory: ' + err);
+  //     }
+  //     //listing all files using forEach
+  //     var description;
+  //     var path2;
+  //     var title;
+  //     files.forEach(function (file) {
+  //         // Do whatever you want to do with the file
+  //
+  //         const fileStream = fs.createReadStream('public/data/'+file);
+  //         const rl = readline.createInterface({
+  //           input: fileStream,
+  //           crlfDelay: Infinity
+  //         });
+  //         let i = 0
+  //         title = file.substring(0, file.length - 4);
+  //         console.log(title);
+  //
+  //         async function processLineByLine() {
+  //           for await (const line of rl) {
+  //             if(i==0){
+  //               description = line;
+  //             }
+  //             else if(i==1){
+  //               path2 = line;
+  //               course.push([{title: title, description: description, path: path2}]);
+  //             }
+  //             else
+  //               break;
+  //
+  //             i = i + 1;
+  //           }
+  //         }
+  //         processLineByLine();
+  //     });
       // res.render('index',{
       //   courses: course,
       // });
 
-  });
-  console.log(course);
-  return course;
-}
-//second async function
-async function second(){
-  let course = await finaltry();
-  console.log(course);
-  res.render('index',{
-    courses: course
-  });
-}
+  // });
+
+    course = [];
+    course.push({title: "English", path:"pictures/english_cover.JPG", description: "Take this course for English offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
+    course.push({title: "Hindi", path:"pictures/hindi_cover.JPG", description: "Take this course for Hindi offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
+    course.push({title: "Maths", path:"pictures/maths_cover.JPG", description: "Take this course for Matematics offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
+
+
+    res.render('index',{
+      courses: course
+    });
 
 
 
