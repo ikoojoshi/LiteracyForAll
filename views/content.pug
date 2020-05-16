@@ -7,6 +7,9 @@ html
       nav{
         background: #dec49b;
       }
+      .mainbody{
+        padding-left: 60px;
+      }
     
   body
     nav.navbar.navbar-expand-lg.navbar-light.warning-color.lighten-5
@@ -27,15 +30,19 @@ html
         .col-sm-2.sidenav   
           br
           br
-          h2= title
+          img.card-img-top(src=path, alt=path)
+          br
+          br
           br
           #list-example.list-group
             each c in course
               a.list-group-item.list-group-item-action(href='#'+c.content)= c.content
 
             
-        .col-sm-8.text-left
+        .col-sm-8.text-left.mainbody
           br
+          br
+          h2= title
           br
           p= description
           br
