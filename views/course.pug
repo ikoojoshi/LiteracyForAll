@@ -21,15 +21,36 @@ html
             a.nav-link(href='../../#courses') Courses
           li.nav-item
             a.nav-link(href='#') About us
+            
+    .container-fluid.text-center
+      .row.content
+        .col-sm-2.sidenav
+          p
+            a(href='#') Link
+          p
+            a(href='#') Link
+          p
+            a(href='#') Link
+        .col-sm-8.text-left
+          br
+          br
+          h2= course.title
+          p= course.description
+          
+          iframe(src='https://www.youtube.com/embed/PPTOfAAs7XQ', width='560', height='315', frameborder='0', allowfullscreen='')
 
-    .container
-      ///#courses
-      h2= course.title
-      p= course.description
-      
-      iframe(src='https://www.youtube.com/embed/PPTOfAAs7XQ', width='560', height='315', frameborder='0', allowfullscreen='')
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          hr
+          h3 Test
+          p Lorem ipsum...
+        .col-sm-2.sidenav
+          .well
+            p ADS
+          .well
+            p ADS
 
-              
+  
     br
     br
     hr
