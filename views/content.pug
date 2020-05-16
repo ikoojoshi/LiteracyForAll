@@ -27,23 +27,27 @@ html
         .col-sm-2.sidenav   
           br
           br
-          each c in course
-            p
-              a(href='#')= c.content
+          h2= title
+          br
+          #list-example.list-group
+            each c in course
+              a.list-group-item.list-group-item-action(href='#'+c.content)= c.content
+
+            
         .col-sm-8.text-left
           br
           br
-          br
-          h2= title
-          br
-          br
           p= description
+          br
           
           each c in course
-            h3= c.content
-            iframe(src="" +c.videos, width='560', height='315', frameborder='0', allowfullscreen='')
-            br
-            br
+            div(id=c.content)
+              br
+              h3= c.content
+              br
+              iframe(src="" +c.videos, width='560', height='315', frameborder='0', allowfullscreen='')
+              br
+              br
       
           hr
         .col-sm-2.sidenav

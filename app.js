@@ -1,35 +1,12 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
 
 const readline = require('readline');
 const fs = require('fs');
 
-//connect to database
-mongoose.connect("mongodb://localhost/literacyforall", {useNewUrlParser:true, useUnifiedTopology: true});
-let db = mongoose.connection;
-
-//check for db errors
-db.on("error", function(err){
-  console.log(err);
-});
-
-//check
-//check connection
-db.once('open', function(){
-  console.log('Connected to MongoDB');
-})
-
 
 //Init app
 const app = express();
-
-//Bringe in models
-let Course = require('./models/course');
-
-//body parser
-//app.use(bodyParser.urlencoded({extended: false}));
-//app.use(bodyParser.json());
 
 //set public folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -110,9 +87,9 @@ app.get('/', function(req, res){
   // });
 
     course = [];
-    course.push({title: "English", path:"pictures/english_cover.JPG", description: "Take this course for English offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
-    course.push({title: "Hindi", path:"pictures/hindi_cover.JPG", description: "Take this course for Hindi offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
-    course.push({title: "Maths", path:"pictures/maths_cover.JPG", description: "Take this course for Matematics offered by Rotaract Club of VIT and Rotaract Club of Vellore Presidency to improve your English Grammar, composition and writing skills. Start today and learn at your own pace."});
+    course.push({title: "English", path:"pictures/english_cover.JPG", description: "Improve your English Grammar, composition and writing skills with this beginner friendly course."});
+    course.push({title: "Hindi", path:"pictures/hindi_cover.JPG", description: "A guide for beginners to effective communication and knowledge of Hindi"});
+    course.push({title: "Maths", path:"pictures/maths_cover.JPG", description: "A course specially architectured for junior school students."});
 
 
     res.render('index',{
