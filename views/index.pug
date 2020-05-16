@@ -67,10 +67,10 @@ html
         //h2 Courses
       br
       .row
-        each course, i in courses
+        //each course in courses
           .col-md-4
             .card(style='width: 18rem;')
-              a(href="/course/"+course._id)
+              a(href="/course/"+course.title)
                 img.card-img-top(src= course.path, alt='Card image cap')
               .card-body
                 a(href="/course/"+course._id)

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= TITLeE
+    title= title
     link(rel="stylesheet" href="/bower/bootstrap/dist/css/bootstrap.css")
     style.
       nav{
@@ -24,14 +24,19 @@ html
             
     .container-fluid.text-center
       .row.content
-        .col-sm-2.sidenav           
-          for i in content
+        .col-sm-2.sidenav   
+          br
+          br
+          each c in course
             p
-              a(href='#')= i
+              a(href='#')= c.content
         .col-sm-8.text-left
           br
           br
-          h2= TITLeE
+          br
+          h2= title
+          br
+          br
           p= description
           
           each c in course
@@ -40,13 +45,10 @@ html
             br
             br
       
-          iframe(src='https://www.youtube.com/embed/PPTOfAAs7XQ', width='560', height='315', frameborder='0', allowfullscreen='')
-          //iframe(src="" +videos[0], width='560', height='315', frameborder='0', allowfullscreen='')
-
-          p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           hr
         .col-sm-2.sidenav
+          br
+          br
           .well
             p ADS
           .well
