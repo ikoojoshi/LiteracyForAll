@@ -122,5 +122,3 @@ app.get('/course/:title', function(req,res){
 app.listen(3000, function(){
   console.log("server started on port 3000");
 });
-
-// to change to new page - res.redirect('/')
