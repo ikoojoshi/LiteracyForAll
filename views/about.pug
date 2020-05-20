@@ -42,40 +42,35 @@ html
         span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav
-          li.nav-item.active
-            a.nav-link(href='#')
+          li.nav-item
+            a.nav-link(href='../')
               | Home 
               span.sr-only (current)
           li.nav-item
-            a.nav-link(href='#courses') Courses
-          li.nav-item
-            a.nav-link(href='/about') About us
+            a.nav-link(href='../#courses') Courses
+          li.nav-item.active
+            a.nav-link(href='#') About us
             
     .jumbotron
       .container
         b
-          p.head Literacy For All
-        p.body A lockdown initiative by Rotaract Club of VIT sponsored by Rotary Club of Vellore Presidency to beat the lockdown blues and learn new skills
-        p.body Check out the courses offered below. 
-          a(href="#courses")
-            img.scrolldown(src='pictures/scrolldown.png', alt='')
+          p.head About Us
+        p.body Literacy For All is a lockdown initiative by Rotaract Club of VIT sponsored by Rotary Club of Vellore Presidency to beat the lockdown blues and learn new skills, architectured specially for the junior school students 
+        
+          
         br
         br
 
     .container
-      #courses
-        //h2 Courses
       br
-      .row
-        each course in courses
-          .col-md-4
-            .card(style='width: 18rem;')
-              a(href="/course/"+course.title)
-                img.card-img-top(src= course.path, alt='Card image cap')
-              .card-body
-                a(href="/course/"+course.title)
-                  h4= course.title
-                p= course.description  
+      h3 Rotaract Club of VIT
+      p.body Rotaract is a Rotary-sponsored service club for young men and women of age 18-30. Rotaract clubs are either community or university based, often sponsored by a local Rotary Club.
+      p.body Rotaract works not only towards community service as an NGO, but as a Non-Profict Organisation (NPO) with a motive to develop leadership and professional skills and have fun through service. 
+      br
+      br
+      br
+      h3 Rotary Club of Vellore Presidency
+      p.body Rotary Cub of Vellore Presidency, Club number 57805, is the parent club of Rotaract Club of VIT. Both clubs come under the district RID 3231.
               
     br
     br

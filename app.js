@@ -16,20 +16,6 @@ app.set('path', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 
-//REad files
-// const readInterface = readline.createInterface({
-//     input: fs.createReadStream('public/data/English.txt'),
-//     output: process.stdout,
-//     console: false
-// });
-//
-// readInterface.on('line', function(line) {
-//     console.log(line);
-// });
-
-
-
-
 //Home Routes
 app.get('/', function(req, res){
 
@@ -38,13 +24,9 @@ app.get('/', function(req, res){
     course.push({title: "Hindi", path:"pictures/hindi_cover.JPG", description: "A guide for beginners to effective communication and knowledge of Hindi"});
     course.push({title: "Maths", path:"pictures/maths_cover.JPG", description: "A course specially architectured for junior school students."});
 
-
     res.render('index',{
       courses: course
     });
-
-
-
   });
 
   // Course.find({}, function(err, courses){
@@ -100,8 +82,6 @@ app.get('/course/:title', function(req,res){
   }
   processLineByLine();
 
-
-
   // Course.findById(req.params.id, function(err,course){
   //   // console.log(courses);
   //   res.render('course',{
@@ -111,12 +91,10 @@ app.get('/course/:title', function(req,res){
 });
 
 
-//English course
-// app.get('/course', function(req,res){
-//   res.render('courses',{
-//     title: 'English'
-//   });
-// });
+
+app.get('/about', function(req,res){
+  res.render('about');
+});
 
 //Start Server
 app.listen(3000, function(){
